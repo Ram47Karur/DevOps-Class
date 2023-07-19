@@ -1,0 +1,11 @@
+FROM nginx
+
+EXPOSE 80
+
+COPY hello_world.html /usr/share/nginx/html/
+
+RUN mkdir /new_directory
+
+ENV HELLO_WORLD=MY_VALUE
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
