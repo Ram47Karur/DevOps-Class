@@ -1,12 +1,13 @@
-FROM nginx
+# Use a base image with Java installed
+FROM eclipse-temurin:17
 EXPOSE 8080
-
-
-# Create a directory inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
+# Copy the JAR file from the host machine to the container's working directory
+COPY target/docker-anurag.jar /app/docker-anurag.jar
 
-COPY target/docker-demo
+# Command to run your Java application
+CMD ["java", "-jar", "docker-anurag.jar"]
 
-# Define the entry point command
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
