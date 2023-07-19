@@ -1,0 +1,11 @@
+# Base image
+FROM eclipse-temurin:17
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file from the local filesystem to the container
+COPY target/docker-demo-0.0.1-SNAPSHOT.jar /app/docker-demo.jar
+
+# Run the application
+CMD ["java", "-jar", "docker-demo.jar"]
