@@ -1,5 +1,4 @@
 FROM openjdk:17
-# Expose the port your application listens on (if applicable)
 EXPOSE 8080
 
 # Copy the JAR file from the target directory to the container
