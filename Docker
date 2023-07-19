@@ -1,0 +1,12 @@
+FROM nginx
+EXPOSE 8080
+
+
+# Create a directory inside the container
+WORKDIR /app
+
+
+COPY target/docker-demo
+
+# Define the entry point command
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
