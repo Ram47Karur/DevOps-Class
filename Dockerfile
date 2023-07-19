@@ -9,14 +9,15 @@ COPY .mvn .mvn
 # Copy the pom.xml file to the container
 COPY pom.xml .
 
-# Download the project dependencies
-RUN ./mvnw dependency:go-offline
+FROM eclipse-temurin:17
+EXPOSE 8080
+# Set the working directory inside the container
+WORKDIR /app
 
-# Copy the application source code to the container
-COPY src src
 
-# Build and package the code into a JAR file
-RUN ./mvnw package
+# Copy the JAR file from the host machine to the container's working directory
+COPY target/docker-demo-0.0.1-SNAPSHOT.jar /app/docker-demo.jar
 
-# Set the command to run the application
-CMD ["java", "-jar", "target/docker-demo-0.0.1-SNAPSHOT.jar"]
+
+# Command to run your Java application
+CMD ["java", "-jar", "docker-demo.jar"]
