@@ -1,1 +1,8 @@
-hello
+FROM jetbrains/intellij-http-client
+
+EXPOSE 1090
+
+RUN mkdir /DevOps-Class
+
+ENV demoSpring=9009
+
