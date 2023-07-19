@@ -7,6 +7,10 @@ WORKDIR /app
 # Copy the JAR file from the host machine to the container's working directory
 COPY target/docker-demo-0.0.1-SNAPSHOT.jar /app/docker-demo.jar
 
+RUN useradd -m -s /bin/bash chetan
+
+USER chetan
+
 # Command to run your Java application
 CMD ["java", "-jar", "docker-demo.jar"]
 
