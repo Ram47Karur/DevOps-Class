@@ -1,4 +1,4 @@
-# Pre-requisites
+# pre-requisites
 
 1. JDK 17
 2. IntelliJ / Eclipse (recent versions; no specific version requirement)
