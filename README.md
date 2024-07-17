@@ -27,3 +27,8 @@ GET http://localhost:8080/hello
 2. Use this maven command to build & package the code into a JAR file: `./mvnw package`
 3. This command will create JAR file under target/docker-demo-0.0.1-SNAPSHOT.jar
 4. Application should be started with the command: `java -jar <path to above JAR file>`.
+
+# Makin changes for the practice seesion :
+    Hi.
+    Hello.
+    Bye.
